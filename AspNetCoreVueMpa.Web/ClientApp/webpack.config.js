@@ -88,7 +88,29 @@ module.exports = {
       filename: 'css/[name].bundle.css'
     }),
     new CleanWebpackPlugin(),
-  ]
+  ],
+  optimization: {
+    runtimeChunk: 'single',
+    splitChunks: {
+      minSize: 0,
+      cacheGroups: {
+        core: {
+          name: 'core',
+          chunks: 'all',
+          test: /[\\/]node_modules[\\/](bootstrap-vue|vue|vuelidate|font-awesome|popper.js|portal-vue|process|regenerator-runtime|setimmediate|vue-functional-data-merge)[\\/]/,
+          priority: 20,
+          enforce: true
+        },
+        vendor: {
+          name: 'vendor',
+          chunks: 'all',
+          test: /[\\/]node_modules[\\/]/,
+          priority: 10,
+          enforce: true
+        }
+      }
+    }
+  }
 }
 
 if (isProduction) {
