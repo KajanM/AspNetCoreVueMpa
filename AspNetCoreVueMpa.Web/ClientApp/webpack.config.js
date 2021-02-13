@@ -53,6 +53,10 @@ module.exports = {
           path.join(__dirname, 'assets/styles/styles.scss')
         ]
       },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        type: 'asset/resource',
+      }
     ]
   },
   plugins: [
