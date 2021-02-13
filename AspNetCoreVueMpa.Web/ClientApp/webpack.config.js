@@ -4,6 +4,13 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
+const isProduction = (process.env.NODE_ENV === 'production');
+if (isProduction) {
+  console.log("Bundling in PRODUCTION mode")
+} else {
+  console.log("Bundling in DEVELOPMENT mode")
+}
+
 const entries = {};
 entries['styles'] = path.join(__dirname, 'assets/styles/styles.scss');
 
@@ -23,6 +30,7 @@ glob.sync('./views/**/main.js').forEach(path => {
 
 module.exports = {
   entry: entries,
+  mode: isProduction ? 'production' : 'development',
   output: {
     path: path.resolve(__dirname, '../wwwroot'),
     filename: 'js/[name].bundle.js'
