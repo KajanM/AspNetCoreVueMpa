@@ -1,5 +1,5 @@
 ﻿<template>
-  <div class="test-global-css">
+  <div class="test-global-css test-scoped-css">
     Hello {{ name }} from Vue! 
   </div>
 </template>
@@ -15,6 +15,10 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+$fontColor: #FFF;
+.test-scoped-css {
+  color: $fontColor;
+}
 
 </style>
