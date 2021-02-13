@@ -4,7 +4,10 @@
   "description": "",
   "private": true,
   "scripts": {
-    "build": "webpack",
+    "set_node_env:dev": "cross-env NODE_ENV=development NODE_OPTIONS=--max_old_space_size=8192",
+    "set_node_env:prod": "cross-env NODE_ENV=production NODE_OPTIONS=--max_old_space_size=1024",
+    "build:dev": "npm run set_node_env:dev webpack",
+    "build:prod": "npm run set_node_env:prod webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
