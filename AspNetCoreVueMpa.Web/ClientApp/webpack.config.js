@@ -4,6 +4,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CompressionWebpackPlugin = require('compression-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const isProduction = (process.env.NODE_ENV === 'production');
 if (isProduction) {
@@ -93,5 +94,6 @@ module.exports = {
 if (isProduction) {
   module.exports.plugins = (module.exports.plugins || []).concat([
     new CompressionWebpackPlugin(),
+    new OptimizeCssAssetsPlugin(),
   ])
 }
