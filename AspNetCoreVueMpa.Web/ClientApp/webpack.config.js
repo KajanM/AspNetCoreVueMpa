@@ -1,6 +1,7 @@
 ﻿const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const glob = require('glob');
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const entries = {};
 const IGNORE_PATHS = ['unused'];
@@ -28,10 +29,23 @@ module.exports = {
       {
         test: /\.vue$/,
         loader: 'vue-loader',
-      }
+      },
+      {
+        test: [
+          path.join(__dirname, 'assets/styles/styles.scss'),
+        ],
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader',
+        ]
+      },
     ]
   },
   plugins: [
     new VueLoaderPlugin(),
+    new MiniCssExtractPlugin({
+      filename: 'css/[name].bundle.css'
+    }),
   ]
 }
