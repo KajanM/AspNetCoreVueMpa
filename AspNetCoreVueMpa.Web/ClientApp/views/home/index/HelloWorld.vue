@@ -1,7 +1,7 @@
 ﻿<template>
-  <div class="test-global-css test-scoped-css">
+  <b-container class="test-global-css test-scoped-css">
     Hello {{ name }} from Vue! 
-  </div>
+  </b-container>
 </template>
 
 <script>
