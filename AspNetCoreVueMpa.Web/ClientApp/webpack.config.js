@@ -1,5 +1,6 @@
 ﻿const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const glob = require('glob');
+const path = require('path');
 
 const entries = {};
 const IGNORE_PATHS = ['unused'];
@@ -18,6 +19,10 @@ glob.sync('./views/**/main.js').forEach(path => {
 
 module.exports = {
   entry: entries,
+  output: {
+    path: path.resolve(__dirname, '../wwwroot'),
+    filename: 'js/[name].bundle.js'
+  },
   module: {
     rules: [
       {
