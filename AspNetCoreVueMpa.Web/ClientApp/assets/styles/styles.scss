@@ -1,4 +1,7 @@
-﻿$testColor: #007BFF;
+﻿@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~bootstrap-vue/dist/bootstrap-vue.min.css";
+
+$testColor: #007BFF;
 
 .test-global-css {
   background: $testColor;
