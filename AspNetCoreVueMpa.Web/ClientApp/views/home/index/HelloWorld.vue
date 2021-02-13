@@ -1,6 +1,7 @@
 ﻿<template>
   <b-container class="test-global-css test-scoped-css">
-    Hello {{ name }} from Vue! 
+    Hello {{ name }} from Vue!
+    <img src="../../../assets/images/kajan.png">
   </b-container>
 </template>
 
