@@ -42,6 +42,17 @@ module.exports = {
           'sass-loader',
         ]
       },
+      {
+        test: /\.(css|s[ac]ss)$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader',
+        ],
+        exclude: [
+          path.join(__dirname, 'assets/styles/styles.scss')
+        ]
+      },
     ]
   },
   plugins: [
