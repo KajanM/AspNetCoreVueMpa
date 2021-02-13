@@ -1,5 +1,5 @@
 ﻿<template>
-  <div>
+  <div class="test-global-css">
     Hello {{ name }} from Vue! 
   </div>
 </template>
