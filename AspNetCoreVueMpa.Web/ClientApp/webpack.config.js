@@ -2,6 +2,7 @@
 const glob = require('glob');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const entries = {};
 entries['styles'] = path.join(__dirname, 'assets/styles/styles.scss');
@@ -76,5 +77,6 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'css/[name].bundle.css'
     }),
+    new CleanWebpackPlugin(),
   ]
 }
