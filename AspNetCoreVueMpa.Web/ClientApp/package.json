@@ -24,6 +24,8 @@
     "webpack-cli": "^4.5.0"
   },
   "dependencies": {
+    "bootstrap": "^4.6.0",
+    "bootstrap-vue": "^2.21.2",
     "vue": "^2.6.12"
   }
 }
