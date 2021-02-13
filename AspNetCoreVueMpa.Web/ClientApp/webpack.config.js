@@ -4,6 +4,8 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const entries = {};
+entries['styles'] = path.join(__dirname, 'assets/styles/styles.scss');
+
 const IGNORE_PATHS = ['unused'];
 
 glob.sync('./views/**/main.js').forEach(path => {
