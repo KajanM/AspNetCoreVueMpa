@@ -10,6 +10,7 @@
   "author": "kajan",
   "license": "ISC",
   "devDependencies": {
+    "glob": "^7.1.6",
     "vue-loader": "^15.9.6",
     "vue-template-compiler": "^2.6.12",
     "webpack": "^5.21.2",
