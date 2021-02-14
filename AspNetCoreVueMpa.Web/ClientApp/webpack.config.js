@@ -82,6 +82,22 @@ module.exports = {
       },
     ]
   },
+  devServer: {
+    historyApiFallback: false,
+    hot: true,
+    noInfo: true,
+    overlay: true,
+    https: true,
+    port: 9000,
+    proxy: {
+      '*': {
+        target: 'https://localhost:5001',
+        changeOrigin: false,
+        secure: false
+      }
+    },
+    contentBase: [path.join(__dirname, '../wwwroot')],
+  },
   plugins: [
     new VueLoaderPlugin(),
     new MiniCssExtractPlugin({
