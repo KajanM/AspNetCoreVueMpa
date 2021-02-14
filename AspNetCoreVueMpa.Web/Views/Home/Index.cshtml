@@ -1,7 +1,13 @@
-﻿@{
+﻿@using AspNetCoreVueMpa.Web.Utils
+@model List<int>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
 @section Scripts{
+    <script type="text/javascript">
+        var viewModel = @Model.ToJson();
+    </script>
     <script type="text/javascript" src="~/js/home-index.bundle.js" asp-append-version="true"></script>
 }
