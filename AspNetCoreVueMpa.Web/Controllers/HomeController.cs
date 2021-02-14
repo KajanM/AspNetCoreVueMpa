@@ -20,7 +20,8 @@ namespace AspNetCoreVueMpa.Web.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var viewModel = new List<int>{1, 2, 3};
+            return View(viewModel);
         }
 
         public IActionResult Privacy()
