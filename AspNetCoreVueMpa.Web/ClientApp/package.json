@@ -8,6 +8,7 @@
     "set_node_env:prod": "cross-env NODE_ENV=production NODE_OPTIONS=--max_old_space_size=1024",
     "build:dev": "npm run set_node_env:dev webpack",
     "build:prod": "npm run set_node_env:prod webpack",
+    "serve": "npm run set_node_env:dev webpack serve",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
