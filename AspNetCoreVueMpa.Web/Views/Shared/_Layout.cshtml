@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"/>
     <title>@ViewData["Title"] - AspNetCoreVueMpa.Web</title>
     <environment include="Development">
+        <link rel="stylesheet" href="~/css/core.bundle.css" asp-append-version="true" type="text/css">
+        <link rel="stylesheet" href="~/css/vendor.bundle.css" asp-append-version="true" type="text/css">
         <link rel="stylesheet" href="~/css/styles.bundle.css">
     </environment>
     <environment exclude="Development">
+        <link rel="stylesheet" href="~/css/core.bundle.css.gz" asp-append-version="true" type="text/css">
+        <link rel="stylesheet" href="~/css/vendor.bundle.css.gz" asp-append-version="true" type="text/css">
         <link rel="stylesheet" href="~/css/styles.bundle.css.gz">
     </environment>
 </head>
@@ -15,5 +19,16 @@
     <div id="app"></div>
     @RenderBody()
     @RenderSection("Scripts", required: false)
+
+    <environment include="Development">
+        <script type="text/javascript" src="~/js/runtime.bundle.js" asp-append-version="true"></script>
+        <script type="text/javascript" src="~/js/core.bundle.js" asp-append-version="true"></script>
+        <script type="text/javascript" src="~/js/vendor.bundle.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script type="text/javascript" src="~/js/runtime.bundle.js.gz" asp-append-version="true"></script>
+        <script type="text/javascript" src="~/js/core.bundle.js.gz" asp-append-version="true"></script>
+        <script type="text/javascript" src="~/js/vendor.bundle.js.gz" asp-append-version="true"></script>
+    </environment>
 </body>
 </html>
