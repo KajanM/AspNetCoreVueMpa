@@ -3,6 +3,9 @@
     <b-container class="test-global-css test-scoped-css">
       Hello {{ name }} from Vue!
       <img src="../../../assets/images/kajan.png">
+      <pre class="text-white">
+        {{ JSON.stringify(viewModel, null, 2) }}
+      </pre>
     </b-container>
   </default-layout>
 </template>
@@ -13,6 +16,7 @@ export default {
   data() {
     return {
       name: "world",
+      viewModel: viewModel,
     }
   },
 }
